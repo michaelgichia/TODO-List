@@ -1,0 +1,26 @@
+{
+  "name": "todojs",
+  "version": "1.0.0",
+  "description": "To~do app in Vanilla Js.",
+  "main": "app.js",
+  "scripts": {
+    "babel": "babel --presets es2015 main/app.js -o build/main.bundle.js",
+    "start": "http-server -p 9000"
+  },
+  "keywords": [
+    "To",
+    "do",
+    "application",
+    "in",
+    "vanilla",
+    "Javascript"
+  ],
+  "author": "Michael Gichia",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0",
+    "http-server": "^0.9.0"
+  }
+}
