@@ -1,25 +1,30 @@
 html {
   box-sizing: border-box;
-  background:url(images/todo.jpg) center no-repeat;
-  background-size:cover;
-  min-height:70vh;
-  display:flex;
-  justify-content: center;
+  background: url(images/todo.jpg);
+  background-size: cover;
+  min-height:100vh;
+  display: flex;
+  justify-content:  center;
   align-items: center;
   text-align: center;
-  font-family: Arial,sans-serif
+  font-family: sans-serif,
+}
+
+body {
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 
 .todobox {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 2% 5%;
   margin: 15% auto;
-  max-width: 600px;
+  min-width: 500px;
   background: rgba(255,255,255,0.70);
-  box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.96),
+              0 25px 50px 0 rgba(0, 0, 0, 0.11);
+  border-radius: 1%;
 }
 
 .todos {
@@ -30,14 +35,19 @@ html {
 }
 
 .todos li {
+  display:flex;
   border-bottom: 1px solid rgba(0,0,0,0.2);
-  padding: 20px 0;
+  padding: 10px 0;
   font-weight: 100;
   display: flex;
+  color: #3f3e3e;
 }
 
+.todos li:first-child {
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
 .todos li:last-child {
-  border-bottom:0;
+  margin-bottom: 30px;
 }
 
 .todos label {
@@ -45,14 +55,14 @@ html {
   cursor: pointer;
   padding-left: 20px;
   font-family: sans-serif;
-  font-style: italic;
   color:  #000;
   width: 25%;
 }
 
 .add-todos input[type="text"] {
-  margin: 20px 10px 20px 20px;
-  min-width: 90%;
+  /*margin: 10% 10% 10% 10%;*/
+  margin-bottom: 30px;
+  min-width: 400px;
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0,0,0,0.1);
@@ -60,6 +70,14 @@ html {
   }
 
 input:checked + label {
+  color: #5e5e5e;
   background:  none;
   text-decoration: line-through;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
