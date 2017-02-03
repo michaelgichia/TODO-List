@@ -35,7 +35,6 @@ body {
 }
 
 .todos li {
-  display:flex;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   padding: 10px 0;
   font-weight: 100;
@@ -52,21 +51,32 @@ body {
 
 .todos label {
   flex:1;
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 17px;
   cursor: pointer;
   padding-left: 20px;
-  font-family: sans-serif;
+  padding-right: 20px;
   color:  #000;
-  width: 25%;
+  width: 100%;
+  -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for WebKit */
+    word-break: break-word;
+  -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+      hyphens: auto;
 }
 
 .add-todos input[type="text"] {
   /*margin: 10% 10% 10% 10%;*/
   margin-bottom: 30px;
-  min-width: 400px;
+  min-width: 80%;
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
   }
 
 input:checked + label {
@@ -80,4 +90,13 @@ input:checked + label {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.actions label[type=button] {
+  font-family: 'Sansita', sans-serif;
+  font-size: 18px; 
 }
