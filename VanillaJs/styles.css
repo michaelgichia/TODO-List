@@ -17,6 +17,19 @@ body {
   background-size: 100% 100%;
 }
 
+.style-li div {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+.style-li div:first-child {
+  width: 3%;
+}
+
+.style-li div:last-child {
+  width: 90%;
+}
+
 .todobox {
   padding: 2% 5%;
   margin: 15% auto;
@@ -36,7 +49,6 @@ body {
 
 .todos li {
   border-bottom: 1px solid rgba(0,0,0,0.2);
-  padding: 10px 0;
   font-weight: 100;
   display: flex;
   color: #3f3e3e;
@@ -50,12 +62,9 @@ body {
 }
 
 .todos label {
-  flex:1;
   font-family: 'Playfair Display', sans-serif;
   font-size: 17px;
   cursor: pointer;
-  padding-left: 20px;
-  padding-right: 20px;
   color:  #000;
   width: 100%;
   -ms-word-break: break-all;
@@ -68,7 +77,6 @@ body {
 }
 
 .add-todos input[type="text"] {
-  /*margin: 10% 10% 10% 10%;*/
   margin-bottom: 30px;
   min-width: 80%;
   padding: 10px;
@@ -78,6 +86,17 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   }
+
+.todos input[type="text"] {
+  width: 100%;
+  min-height: 10px;
+  outline: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 10px;
+}
 
 input:checked + label {
   color: #5e5e5e;
@@ -90,6 +109,7 @@ input:checked + label {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding: 0 10px;
 }
 
 .title {

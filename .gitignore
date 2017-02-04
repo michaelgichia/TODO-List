@@ -1,4 +1,10 @@
-# Logs
+# Log
+*.swp
+*.swo
+*.swn
+*.sw
+
+build/
 logs
 *.log
 npm-debug.log*
