@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
 
-<head>
-  <title>To~Do List in Vanilla Js</title>
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Playfair+Display|Sansita" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="todobox">
-    <div class="title">
-      <h2>To~Do</h2>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo right"><i class="material-icons">today</i></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="sass.html">Home</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="col s10 offset-s1 card-panel todos-box shadow">
+        <div>
+          <form class="col s12 add-todos">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="last_name" type="text" class="todo-input">
+                <label for="last_name">Add a to~do...</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="todo-list">
+          <ul class="todos">
+          </ul>
+        </div>
+      </div>
     </div>
-    <div>
-      <form class="add-todos">
-        <input type="text" class="todo-input" placeholder="Add a to~do...">
-      </form>
-    </div>
-    <div class="actions">
-      <input type="checkbox"></input>
-      <label type="button" value="">Active</label>
-      <label type="button" value="">Completed</label>
-    </div>
-    <div>
-      <ul class="todos">
-      </ul>
-    </div>
-  </div>
-  <script src="build/main.bundle.js"></script>
-  <script src="main/app.js"></script>
-</body>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src='main.js'></script>
+  </body>
 </html>
+
