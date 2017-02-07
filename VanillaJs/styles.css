@@ -1,75 +1,123 @@
-html {
+html{
   background:url(images/todo.jpg) center no-repeat;
   background-size:cover;
   min-height:100vh;
-  line-height: none !important;
+  line-height:none !important;
 }
 
-.todos-box {
-  margin-top: 20px !important;
-  border-radius: 5px !important;
-  padding: 10px 24px !important;
-  background: rgba(255, 255, 255, 0.54) !important;
+/*Overriding Materializecss styles defaults*/
+.input-field label{
+  font-size:1.5rem !important;
+  color:rgba(68,68,68,0.88) !important;
 }
 
-.shadow {
-  -moz-box-shadow:    0 2px 4px 0 rgba(0, 0, 0, 0.96) !important;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.96) !important;
-  box-shadow:         0 2px 4px 0 rgba(0, 0, 0, 0.96),
-                      0 25px 50px 0 rgba(0, 0, 0, 0.11) !important;
+[type="checkbox"]+label{
+  min-height:25px !important;
+  height:auto !important;
 }
 
-.materialize-textarea {
-  border-bottom: 0!important;
-  margin: 0!important;
+input[type=text]{
+  border-bottom:1px solid #444 !important;
+  box-shadow:0 1px 0 0 rgba(0,0,0,0.3) !important;
 }
 
-.add-todos {
-  margin-top: 20px;
+input[type="checkbox"]{
+  position:absolute !important;
 }
 
-li label {
-  color: black !important;
-  -ms-word-break: break-all;
-    word-break: break-all;
-    /* Non standard for WebKit */
-    word-break: break-word;
-  -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-      hyphens: auto;
+input:checked+label{
+  color:#444 !important;
+  background:none;
+  text-decoration:line-through;
+  font-style:italic;
+  }
+
+[type="checkbox"].filled-in:checked+label:after{
+  border:2px solid #6e6d6d !important;
+  background-color:#9b9b9b !important;
 }
 
-.input-field label {
-  font-size: 1.5rem !important;
-  color: rgba(68, 68, 68, 0.88) !important;
+/*Todos styles*/
+.todos-box{
+  margin-top:20px !important;
+  border-radius:5px !important;
+  padding:10px 10px !important;
+  background:rgba(255,255,255,0.54) !important;
 }
 
-input[type=text] {
-  border-bottom: 1px solid #444 !important;
-  box-shadow: 0 1px 0 0 rgba(0,0,0,0.3) !important;
+.shadow{
+  -moz-box-shadow:02px 4px 0 rgba(0,0,0,0.96) !important;
+  -webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,0.96) !important;
+  box-shadow:0 2px 4px 0 rgba(0,0,0,0.96),
+  0 25px 50px 0 rgba(0,0,0,0.11) !important;
 }
 
-input:checked + label {
-  color: #444!important;
-  background:  none;
-  text-decoration: line-through;
-  font-style: italic;
+.materialize-textarea{
+  border-bottom:0 !important;
+  margin:0 !important;
 }
 
-[type="checkbox"].filled-in:checked+label:after {
-  border: 2px solid #6e6d6d !important;
-  background-color: #9b9b9b !important; 
+.add-todos{
+  margin-top:20px;
 }
 
-.todo-list li {
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-  padding: 10px;
+li label{
+  color:black !important;
+  -ms-word-break:break-all;
+  word-break:break-all;
+  /*NonstandardforWebKit*/
+  word-break:break-word;
+  -webkit-hyphens:auto;
+  -moz-hyphens:auto;
+  hyphens:auto;
 }
 
-li:first-of-type {
-  border-top: 1px solid rgba(0,0,0,0.2); 
+.todos{
+  margin:0 !important;
+  padding:0 !important;
+  list-style:none !important;
 }
 
-li:last-of-type {
-  border-bottom: none;
+.todos li{
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  padding:10px 0;
+  display:flex;
 }
+
+.todos label{
+  flex:1;
+  cursor:pointer;
+  -ms-word-break:break-all;
+  word-break:break-all;
+  /*NonstandardforWebKit*/
+  word-break:break-word;
+  -webkit-hyphens:auto;
+  -moz-hyphens:auto;
+  hyphens:auto;
+}
+
+li:first-of-type{
+  border-top:1px solid rgba(0,0,0,0.2);
+}
+
+li:last-of-type{
+  border-bottom:none;
+  min-height:25px !important;
+  margin-bottom:10px !important;
+}
+
+label+span:after {
+  float:right !important;
+  padding-left:5px;
+}
+
+svg{
+  fill:rgba(238,110,115,0.3);
+}
+
+svg:hover{
+  fill:#ee6e73;
+  transition: color 0.2s ease-out;
+}
+
+
