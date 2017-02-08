@@ -1,17 +1,14 @@
 // Todo store
-var todosArray = [
-  {todoContent: 'Im Michael Gichia', completed: false},
-  {todoContent: 'A software developer', completed: false},
-  {todoContent: 'It is awesome', completed: false}
-]
+var todosArray = []
 // Event Listener
 var todos = document.querySelector('.todos');
-
-
 var todosInput = document.querySelector('.todo-input');
+var actions = document.querySelector('.actions');
 
 todosInput.addEventListener('keypress', addTodo)
+todos.addEventListener('click', handlers)
 todos.addEventListener('dblclick', editTodo)
+actions.addEventListener('click', actionHandler)
 
 /**
  * Add an item to the todosArray and display in on the
@@ -49,13 +46,13 @@ function renderTodos (todos, todosArray) {
   todos.innerHTML = todosArray.map((todo, index) => {
     return `
       <li>
-        <input type="checkbox" class="filled-in" id='todo${index}' />
-        <label for='todo${index}' class='label${index}' id='${index}'>${todo.todoContent}</label>
+        <input type="checkbox" class="checkbox" id="${index}" ${todo.completed ? "checked" : ""} />
+        <label class="label${index}" id="${index}">${todo.todoContent}</label>
+        <button class="transparent" id="${index}">&times;</button>
       </li>
     `
   }).join('');
 }
-
 
 /**
  * Edit todo on double click on todoContent.
@@ -105,18 +102,64 @@ function editTodo (e) {
   })
 }
 
-/**
- * Delete todo when delete button is clicked.
- *
- * @param {integer} position Position of a todo on the array.
-*/
-// var action = document.querySelector('.action');
-// window.onload = function () {
-//   action.addEventListener('click', deleteTodo)  
-// }
+function actionHandler (e) {
+  allTodo(e);
+  toggleAll(e);
+  activeTodo(e);
+  completedTodo(e);
+}
 
-function deleteTodo (e) {
-  console.log(e.target.id)
+/**
+ * Toggle all todos as completed or active.
+*/
+function toggleAll (e) {
+  if (!e.target.matches('#toggle-all')) return;
+  var noOfActiveTodos = (todosArray.filter(todo => !!todo.completed)).length;
+  var noOfCompletedTodos = (todosArray.filter(todo => !todo.completed)).length;
+
+  if (noOfActiveTodos < todosArray.length) {
+    todosArray.map(todo => todo.completed = true);
+
+  } else if(noOfCompletedTodos < todosArray.length) {
+    todosArray.map(todo => todo.completed = false);
+
+  } else {
+    todosArray.map(todo => todo.completed = !todo.completed);
+
+  }
+  renderTodos(todos, todosArray)
+}
+
+/**
+ * Show active todos.
+*/
+function activeTodo (e) {
+  if (!e.target.matches('#active-todo')) return;
+  var activeTodos = todosArray.filter( todo => !todo.completed)
+  renderTodos(todos, activeTodos)
+}
+
+/**
+ * Show completed todos.
+*/
+function completedTodo (e) {
+  if (!e.target.matches('#complete-todo')) return;
+  var completedTodos = todosArray.filter( todo => !!todo.completed)
+  renderTodos(todos, completedTodos)
+}
+
+
+/**
+ * Show all todos.
+*/
+function allTodo (e) {
+  if (!e.target.matches('#all-todo')) return;
+  renderTodos(todos, todosArray)
+}
+
+function handlers (e) {
+  toggleTodo(e);
+  deleteTodo(e);
 }
 
 /**
@@ -124,26 +167,23 @@ function deleteTodo (e) {
  *
  * @param {integer} position Position of a todo on the array.
 */
-function toggleTodo (position) {
-  todo = todosArray[position];
-  todo.completed = !todo.completed;
-  this.displayTodos();
+function toggleTodo (e) {
+  var index = parseInt(e.target.id)
+  if (!e.target.matches('.checkbox')) return;
+  var todo = todosArray[index];
+  todo.completed = !(todo.completed);
+  todosArray.splice(index, 1, todo)
+  renderTodos(todos, todosArray); 
 }
 
 /**
- * Interchange all todos as completed or active.
+ * Delete todo when delete button is clicked.
+ *
 */
-function toggleAll () {
-  var todo = todosArray;
-  var noOfActiveTodos = (todo.filter(todo => todo.completed === true)).length;
-  var noOfCompletedTodos = (todo.filter(todo => todo.completed === false)).length;
-  if (noOfActiveTodos < todo.length) {
-    todo.map(todo => todo.completed = true);
-  } else if(noOfCompletedTodos < todo.length) {
-    todo.map(todo => todo.completed = false);
-  } else {
-    todo.map(todo => todo.completed = !todo.completed);
-  }
-
+function deleteTodo (e) {
+  var index = parseInt(e.target.id)
+  if (!e.target.matches('button')) return;
+  todosArray.splice(index, 1)
+  renderTodos(todos, todosArray)
 }
 

@@ -12,7 +12,7 @@
   },
   "scripts": {
     "babel": "babel --presets es2015 main.js -o build/main.bundle.js",
-    "start": "http-server -p 8000"
+    "start": "http-server -p 7777"
   },
   "repository": {
     "type": "git",

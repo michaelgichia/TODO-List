@@ -5,24 +5,49 @@ html{
   line-height:none !important;
 }
 
-/*Overriding Materializecss styles defaults*/
-.input-field label{
-  font-size:1.5rem !important;
-  color:rgba(68,68,68,0.88) !important;
-}
-
 [type="checkbox"]+label{
   min-height:25px !important;
   height:auto !important;
+  padding-left: 15px !important;
 }
 
 input[type=text]{
   border-bottom:1px solid #444 !important;
   box-shadow:0 1px 0 0 rgba(0,0,0,0.3) !important;
+  font-size:1rem !important;
+  color: #504f4f !important;
+  margin: 0 0 0 0 !important;
 }
 
-input[type="checkbox"]{
-  position:absolute !important;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #504f4f !important;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: #504f4f !important;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: #504f4f !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #504f4f !important;
+}
+
+[type="checkbox"]:not(:checked) {
+  position: relative !important;
+  left: 0px !important;
+  opacity: 1 !important;
+}
+
+[type="checkbox"]+label:before {
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important
+  border: transparent !important;
+  border-radius: 0 !important;
+  margin-top: 0 !important;
 }
 
 input:checked+label{
@@ -32,16 +57,11 @@ input:checked+label{
   font-style:italic;
   }
 
-[type="checkbox"].filled-in:checked+label:after{
-  border:2px solid #6e6d6d !important;
-  background-color:#9b9b9b !important;
-}
-
 /*Todos styles*/
 .todos-box{
-  margin-top:20px !important;
+  margin-top:0px !important;
   border-radius:5px !important;
-  padding:10px 10px !important;
+  padding: 0 15px 0px 15px !important;
   background:rgba(255,255,255,0.54) !important;
 }
 
@@ -73,15 +93,16 @@ li label{
 }
 
 .todos{
-  margin:0 !important;
+  margin: 0 1em 0 1em !important;
   padding:0 !important;
   list-style:none !important;
 }
 
 .todos li{
   border-bottom:1px solid rgba(0,0,0,0.2);
-  padding:10px 0;
+  padding:10px 15px;
   display:flex;
+  margin: 0 -2em 0 -2em;
 }
 
 .todos label{
@@ -106,18 +127,65 @@ li:last-of-type{
   margin-bottom:10px !important;
 }
 
-label+span:after {
+label+button:after {
   float:right !important;
   padding-left:5px;
 }
 
-svg{
-  fill:rgba(238,110,115,0.3);
+label:after {
+  float:right !important;
+  padding-left:5px;
 }
 
-svg:hover{
-  fill:#ee6e73;
-  transition: color 0.2s ease-out;
+li button {
+  margin-right: 5px !important;
+  padding-right: 15px !important;
+  height: 20px;
+  width: 1px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  color:  #504f4f;
+  font-weight: bolder;
+  transition: .2s ease-out !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+li button:hover {
+  color: rgb(238, 110, 115);
 }
 
 
+[type="checkbox"] {
+  margin-left: 0px !important;
+  cursor: pointer;
+  border-right: 3px solid #9e9e9e !important;
+  border-bottom: 2px solid #9e9e9e !important;
+  height: auto !important;
+  top: 0px !important;
+  transition: .2s ease-out !important;
+  opacity: 1 !important;
+  position: inherit !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-left: inherit !important;
+  margin-right: inherit !important;
+}
+
+.actions label {
+  color: #444 !important;
+  font-size: 1rem !important;
+  position: relative !important;
+  cursor: pointer !important;
+  display:inline-block !important;
+  padding-left:inherit !important;
+}
+
+.actions label[type=button] {
+  font-family: 'Sansita', sans-serif;
+}
