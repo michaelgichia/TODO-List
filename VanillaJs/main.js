@@ -6,6 +6,8 @@ const todos = document.querySelector('.todos');
 const todosInput = document.querySelector('.todo-input');
 // eslint-disable-next-line
 const actions = document.querySelector('.actions');
+// eslint-disable-next-line
+const commpletedTodos = document.querySelector('.todos-complete');
 
 // Render todos to the browser
 function renderTodos(elTodo, array) {

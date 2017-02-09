@@ -175,6 +175,7 @@ li button:hover {
   justify-content: space-between;
   margin-left: inherit !important;
   margin-right: inherit !important;
+  padding-bottom: 5px !important;
 }
 
 .actions label {
@@ -188,4 +189,9 @@ li button:hover {
 
 .actions label[type=button] {
   font-family: 'Sansita', sans-serif;
+}
+
+.todos-complete {
+  border-top: 1px solid #444;
+
 }
