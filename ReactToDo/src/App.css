@@ -1,0 +1,36 @@
+li {
+  list-style-type: none!important;
+}
+
+input[type="checkbox" i] {
+	width: 5%;
+}
+ form {
+	margin:0px 20px;
+ }
+ 
+input[type="text" i] {
+	width: 500px;
+}
+
+li {
+	padding: 5px 0;
+}
+
+li label {
+	width: 30%;
+}
+
+button {
+	margin: 0px 5px;
+	height: 25px;
+}
+.todo-row {
+	display: flex;
+}
+
+h3 {
+	display: flex;
+	margin: 5px 250px;
+}
+
