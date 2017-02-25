@@ -44,7 +44,7 @@ input[type=text]{
 [type="checkbox"]+label:before {
   content: none !important;
   width: 0 !important;
-  height: 0 !important
+  height: 0 !important;
   border: transparent !important;
   border-radius: 0 !important;
   margin-top: 0 !important;
