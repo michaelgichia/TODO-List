@@ -1,9 +1,11 @@
-.App {
-	text-align: left;
+html{
+  background:url('images/todo.jpg') center no-repeat;
+  background-size:cover;
+  min-height:100vh;
+  line-height:none;
 }
+
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
 }
 
@@ -14,4 +16,106 @@ input:checked+label{
   font-style:italic;
 }
 
+li {
+  border: 1px solid #d2d0d0;
+  margin: 10px;
+  border-radius: 2px;
+  padding: 10px 10px 0 10px;
+  -moz-box-shadow:0 1px 1px 0 #d2d0d0;
+  -webkit-box-shadow:0 1px 1px 0 #d2d0d0;
+  box-shadow: 0 0px 0px 0 #d2d0d0, 0 0px 1px 0 #d2d0d0;
+  background:rgba(255,255,255,0.5);
+}
 
+[type="checkbox"].filled-in:checked+label:after {
+  border: 2px solid #ee6e73;
+  background-color: #ee6e73;
+}
+
+[type="checkbox"].filled-in:not(:checked)+label:after {
+  border: 2px solid rgba(218, 88, 92, 0.65);
+}
+
+li label{
+  -ms-word-break:break-all;
+  word-break:break-all;
+  /*NonstandardforWebKit*/
+  word-break:break-word;
+  -webkit-hyphens:auto;
+  -moz-hyphens:auto;
+  hyphens:auto;
+}
+
+li label {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color:  #2d2d2d;
+  transition: .2s ease-out ;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+li label.delete:hover,
+li label.edit:hover {
+  color: rgb(238, 110, 115);
+  font-weight: bolder;
+}
+
+li label.delete,
+li label.edit {
+  color:  #8a8989;
+}
+
+.action {
+  padding-top: 10px;
+}
+
+.actions label:first-of-type {
+  margin-left: 10%;
+}
+
+.actions label {
+  margin: 0 10%;
+}
+
+.delete {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid rgb(238, 110, 115);
+  box-shadow: 0 1px 0 0 rgb(238, 110, 115);
+}
+
+form {
+  margin: 10px;
+  padding: 10px;
+  background:rgba(255,255,255,0.5);
+}
+
+input[type=text] {
+  margin-bottom: 5px;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(238, 110, 115);
+}
+
+.title p {
+  margin-bottom: 0px;
+}
+
+
+form label {
+  font-size: .8rem;
+  color: #ee6e73;
+  font-style: italic;
+}
+
+.row .col.s12 {
+  padding: 0px;
+}

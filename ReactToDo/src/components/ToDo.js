@@ -58,6 +58,8 @@ export default class ToDo extends Component {
 				key={index}
 				{...todo}
 				{...this.updateTodos}
+        id={`checkbox-${index}`}
+        HtmlFor={`checkbox-${index}`}
 				onDelete={() => this.deleteTodo(todo)}
 				updateTodos={this.updateTodos}
 			/>
@@ -67,19 +69,22 @@ export default class ToDo extends Component {
   render() {
     return(
       <div>
-        <div className="title">
-          <h3>To~Do</h3>
+        <div className="title col l6 m8 s12 offset-l3 offset-m2">
+          <p>To~Do</p>
         </div>
-        <TodoInput
-          createTodo={this.createTodo}
-          onSubmit={this.handelSubmit}
-          ref="inputValue"
-          onClick={this.handelSubmit}
-          onChange={this.onInputChange}
-          value={this.state.term}/>
-          <ul>
-          	{this.renderTodos(this.state.todos)}
-          </ul>
+        <div className="col l6 m8 s12 offset-l3 offset-m2">
+          <TodoInput
+            createTodo={this.createTodo}
+            onSubmit={this.handelSubmit}
+            ref="inputValue"
+            onChange={this.onInputChange}
+            value={this.state.term}/>
+          </div>
+          <div className="col l6 m8 s12 offset-l3 offset-m2">
+            <ul>
+            	{this.renderTodos(this.state.todos)}
+            </ul>
+          </div>
       </div>
     )
   }

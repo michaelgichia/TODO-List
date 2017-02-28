@@ -4,13 +4,13 @@ export default class TodoInput extends Component {
 	render() {
 		return(
 			<div>
-				<form onSubmit={this.props.onSubmit}>
+				<form onSubmit={this.props.onSubmit} className="z-depth-2">
 					<input
 						type="text"
 						value={this.props.value}
 						onChange={this.props.onChange}
-						ref={this.props.refs}/>
-					<input type="button" value="Add Todo" onClick={this.props.onClick}/>
+						ref={this.props.refs}
+						placeholder="Enter to do..."/>
 				</form>
 			</div>
 		)

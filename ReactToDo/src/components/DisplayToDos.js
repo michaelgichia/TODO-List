@@ -27,24 +27,26 @@ export default class DisplayToDos extends Component {
    	if(this.state.isEditing) {
    		return(
    			<form onSubmit={this.formSubmit}>
-   				<input
-   					type="text"
-   					defaultValue={this.props.content}
-   					ref="newValue"
-   				/>
+          <label>editing...</label>
+          <input
+            className="input-style"
+            type="text"
+            defaultValue={this.props.content}
+            ref="newValue"
+          />
    			</form>
    		)
    	}
 		return(
-			<li key={this.props.keys}>
-				<div className="todo-row">
-					<input type="checkbox"/>
-					<label>{this.props.content}</label>
-					<button onClick={this.editTodo}>Edit</button>
-					<button onClick={this.props.onDelete}>Delete</button>
-				</div>
-			</li>
-		)
+			<li key={this.props.keys} className="z-depth-2">
+        <input type="checkbox" className="filled-in" id={this.props.id}/>
+        <label htmlFor={this.props.id}>{this.props.content}</label>
+        <div className="actions">
+          <label className="edit transparent" onClick={this.editTodo}><i className="tiny material-icons">mode_edit</i></label>
+          <label className="delete transparent" onClick={this.props.onDelete}>&times;</label>
+        </div>
+      </li>
+    )
   }
 }
  
