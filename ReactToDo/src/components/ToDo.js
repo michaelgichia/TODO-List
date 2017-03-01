@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import TodoInput from './TodoInput';
 import DisplayToDos from './DisplayToDos';
+import Task from './Task';
 
 export default class ToDo extends Component {
 	constructor(props){
@@ -20,6 +21,10 @@ export default class ToDo extends Component {
     this.renderTodos = this.renderTodos.bind(this)
     this.deleteTodo = this.deleteTodo.bind(this)
     this.updateTodos = this.updateTodos.bind(this)
+    this.toggleAll = this.toggleAll.bind(this)
+    this.activeTodos = this.activeTodos.bind(this)
+    this.completedTodos = this.completedTodos.bind(this)
+    this.newTodos = this.newTodos.bind(this)
   }
 
   onInputChange(event) {
@@ -52,7 +57,35 @@ export default class ToDo extends Component {
   	this.setState({todos})
   }
 
-  renderTodos(todos) {
+  activeTodos(todos) {
+    return todos.filter(todo => !todo.isCompleted);
+  }
+
+  completedTodos(todos) {
+    return todos.filter(todo => !!todo.isCompleted);
+  }
+
+  newTodos(todos, activeTodos, completedTodos) {
+    if(completedTodos.length > 0) {
+      return todos.map(todo => Object.assign({}, todo, {isCompleted: false}))
+    } else if(activeTodos.length > 0) {
+      return todos.map(todo => Object.assign({}, todo, {isCompleted: true}))
+    } else {
+      return todos.map(todo => Object.assign({}, todo, {isCompleted: !todo.isCompleted}))
+    }
+  }
+
+  toggleAll() {
+    const {todos} = this.state;
+    const activeTodos = this.activeTodos(todos);
+    const completedTodos = this.completedTodos(todos);
+    const newTodos = this.newTodos(todos, activeTodos, completedTodos)
+    this.setState({todos: newTodos})
+  }
+
+  renderTodos() {
+    const {todos} = this.state;
+    console.log(todos)
   	return(_.map(todos, (todo, index) => (
   		<DisplayToDos
 				key={index}
@@ -79,10 +112,14 @@ export default class ToDo extends Component {
             ref="inputValue"
             onChange={this.onInputChange}
             value={this.state.term}/>
-          </div>
+          <Task
+            {...this.state}
+            toggleAll={this.toggleAll}
+          /> 
+        </div>
           <div className="col l6 m8 s12 offset-l3 offset-m2">
             <ul>
-            	{this.renderTodos(this.state.todos)}
+            	{this.renderTodos()}
             </ul>
           </div>
       </div>
