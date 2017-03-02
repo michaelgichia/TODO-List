@@ -13,7 +13,9 @@ export default class ToDo extends Component {
         {content: "Learn Redux Saga in Depth", isCompleted: false},
         {content: "Learn Redux Redux-Form in Depth", isCompleted: false}
       ],
-      term: ''
+      term: '',
+      active: false,
+      complete: false
     }
     this.createTodo = this.createTodo.bind(this)
     this.handelSubmit = this.handelSubmit.bind(this)
@@ -26,6 +28,8 @@ export default class ToDo extends Component {
     this.completedTodos = this.completedTodos.bind(this)
     this.newTodos = this.newTodos.bind(this)
     this.updateCheckbox = this.updateCheckbox.bind(this)
+    this.displayActiveTodos = this.displayActiveTodos.bind(this)
+    this.displayCompletedTodos = this.displayCompletedTodos.bind(this)
   }
 
   onInputChange(event) {
@@ -85,19 +89,31 @@ export default class ToDo extends Component {
 
   toggleAll() {
     const {todos} = this.state;
-    const activeTodos = this.activeTodos(todos);
-    const completedTodos = this.completedTodos(todos);
+    let activeTodos = this.activeTodos(todos);
+    let completedTodos = this.completedTodos(todos);
     const newTodos = this.newTodos(todos, activeTodos, completedTodos)
     this.setState({todos: newTodos})
   }
 
-  toggle() {
-    
+  displayActiveTodos() {
+    this.setState({active: true, complete: false})
+  }
+
+  displayCompletedTodos() {
+    this.setState({active: false, complete: true})
   }
 
   renderTodos() {
-    const {todos} = this.state;
-  	return(_.map(todos, (todo, index) => (
+    const {todos, active, complete} = this.state;
+    let todoItems;
+    if(active) {
+      todoItems = _.filter(todos, todo => todo.isCompleted === false);
+    } else if(complete) {
+      todoItems = _.filter(todos, todo => todo.isCompleted === true);
+    } else {
+      todoItems = todos;
+    }
+  	return(_.map(todoItems, (todo, index) => (
   		<DisplayToDos
 				key={index}
         {...this.state}
@@ -128,6 +144,8 @@ export default class ToDo extends Component {
           <Task
             {...this.state}
             toggleAll={this.toggleAll}
+            displayActiveTodos={this.displayActiveTodos}
+            displayCompletedTodos={this.displayCompletedTodos}
           /> 
         </div>
           <div className="col l6 m8 s12 offset-l3 offset-m2">
