@@ -9,6 +9,7 @@ export default class DisplayToDos extends Component {
     }
     this.editTodo = this.editTodo.bind(this)
     this.formSubmit = this.formSubmit.bind(this)
+    this.toggle = this.toggle.bind(this)
   }
 
   editTodo() {
@@ -23,8 +24,13 @@ export default class DisplayToDos extends Component {
   	this.setState({isEditing: false})
   }
 
+  toggle() {
+    const index = this.refs.checkbox.id;
+    const oldCheckboxVal = this.props.todos[index];
+    this.props.updateCheckbox(oldCheckboxVal)
+  }
+
    render() {
-    console.log(this.props.isCompleted)
    	if(this.state.isEditing) {
    		return(
    			<form onSubmit={this.formSubmit}>
@@ -44,8 +50,9 @@ export default class DisplayToDos extends Component {
           type="checkbox"
           className="filled-in"
           id={this.props.id}
+          ref="checkbox"
           checked={this.props.isCompleted ? "checked":""}
-          onChange={() => this.props.isCompleted ? "checked":""}
+          onChange={this.toggle}
         />
         <label
           htmlFor={this.props.id}>

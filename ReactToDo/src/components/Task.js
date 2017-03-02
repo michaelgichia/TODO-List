@@ -3,14 +3,10 @@ import React, { Component } from 'react';
 export default class Task extends Component {
 	constructor(props){
     super(props)
-    this.toggle = this.toggle.bind(this)
     this.activeTodos = this.activeTodos.bind(this)
     this.completed = this.completed.bind(this)
   }
 
-  toggle() {
-
-  }
 
   activeTodos() {
 

@@ -25,6 +25,7 @@ export default class ToDo extends Component {
     this.activeTodos = this.activeTodos.bind(this)
     this.completedTodos = this.completedTodos.bind(this)
     this.newTodos = this.newTodos.bind(this)
+    this.updateCheckbox = this.updateCheckbox.bind(this)
   }
 
   onInputChange(event) {
@@ -57,6 +58,13 @@ export default class ToDo extends Component {
   	this.setState({todos})
   }
 
+  updateCheckbox(oldCheckboxVal) {
+    const {todos} = this.state
+    const newValue = _.find(todos, todo => todo.content === oldCheckboxVal.content)
+    newValue.isCompleted = !newValue.isCompleted;
+    this.setState({todos});
+  }
+
   activeTodos(todos) {
     return todos.filter(todo => !todo.isCompleted);
   }
@@ -83,18 +91,23 @@ export default class ToDo extends Component {
     this.setState({todos: newTodos})
   }
 
+  toggle() {
+    
+  }
+
   renderTodos() {
     const {todos} = this.state;
-    console.log(todos)
   	return(_.map(todos, (todo, index) => (
   		<DisplayToDos
 				key={index}
+        {...this.state}
 				{...todo}
 				{...this.updateTodos}
-        id={`checkbox-${index}`}
-        HtmlFor={`checkbox-${index}`}
+        id={index}
+        HtmlFor={index}
 				onDelete={() => this.deleteTodo(todo)}
 				updateTodos={this.updateTodos}
+        updateCheckbox={this.updateCheckbox}
 			/>
 		)))
   }
