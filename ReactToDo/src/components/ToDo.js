@@ -30,6 +30,7 @@ export default class ToDo extends Component {
     this.updateCheckbox = this.updateCheckbox.bind(this)
     this.displayActiveTodos = this.displayActiveTodos.bind(this)
     this.displayCompletedTodos = this.displayCompletedTodos.bind(this)
+    this.displayAllTodos = this.displayAllTodos.bind(this)
   }
 
   onInputChange(event) {
@@ -103,6 +104,10 @@ export default class ToDo extends Component {
     this.setState({active: false, complete: true})
   }
 
+  displayAllTodos() {
+    this.setState({active: false, complete: false})
+  }
+
   renderTodos() {
     const {todos, active, complete} = this.state;
     let todoItems;
@@ -110,6 +115,8 @@ export default class ToDo extends Component {
       todoItems = _.filter(todos, todo => todo.isCompleted === false);
     } else if(complete) {
       todoItems = _.filter(todos, todo => todo.isCompleted === true);
+    } else if(!complete && !active) {
+      todoItems = todos
     } else {
       todoItems = todos;
     }
@@ -146,6 +153,7 @@ export default class ToDo extends Component {
             toggleAll={this.toggleAll}
             displayActiveTodos={this.displayActiveTodos}
             displayCompletedTodos={this.displayCompletedTodos}
+            displayAllTodos={this.displayAllTodos}
           /> 
         </div>
           <div className="col l6 m8 s12 offset-l3 offset-m2">
