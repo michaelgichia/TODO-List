@@ -14,11 +14,11 @@ export default class DisplayToDos extends Component {
   }
 
   formSubmit = (event) => {
-  	event.preventDefault()
-  	const newContent = this.refs.newValue.value
-  	const oldContent = this.props.content
-  	this.props.updateTodos(newContent, oldContent)
-  	this.setState({isEditing: false})
+    event.preventDefault()
+    const newContent = this.refs.newValue.value
+    const oldContent = this.props.content
+    this.props.updateTodos(newContent, oldContent)
+    this.setState({isEditing: false})
   }
 
   toggle = () => {
@@ -27,9 +27,9 @@ export default class DisplayToDos extends Component {
     this.props.updateCheckbox(oldCheckboxVal)
   }
 
-   render() {
+  render() {
    	if(this.state.isEditing) {
-   		return(
+   		return (
    			<form onSubmit={this.formSubmit}>
           <label>editing...</label>
           <input
@@ -41,7 +41,7 @@ export default class DisplayToDos extends Component {
    			</form>
    		)
    	}
-		return(
+		return (
 			<li key={this.props.keys} className="z-depth-2">
         <input
           type="checkbox"
@@ -51,14 +51,9 @@ export default class DisplayToDos extends Component {
           checked={this.props.isCompleted ? "checked":""}
           onChange={this.toggle}
         />
-        <label
-          htmlFor={this.props.id}>
-          {this.props.content}
-        </label>
+        <label htmlFor={this.props.id}>{this.props.content}</label>
         <div className="actions">
-          <label
-            className="edit transparent"
-            onClick={this.editTodo}>
+          <label className="edit transparent" onClick={this.editTodo}>
             <i className="tiny material-icons">mode_edit</i>
           </label>
           <label className="delete transparent" onClick={this.props.onDelete}>&times;</label>

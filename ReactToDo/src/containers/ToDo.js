@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import TodoInput from './TodoInput';
+import TodoInput from '../components/TodoInput';
 import DisplayToDos from './DisplayToDos';
-import Task from './Task';
+import Task from '../components/Task';
 
 export default class ToDo extends Component {
 	constructor(props){
@@ -96,18 +96,21 @@ export default class ToDo extends Component {
     this.setState({active: false, complete: false})
   }
 
-  renderTodos = () => {
+  playActions = () => {
     const {todos, active, complete} = this.state;
-    let todoItems;
     if(active) {
-      todoItems = _.filter(todos, todo => todo.isCompleted === false);
+      return _.filter(todos, todo => todo.isCompleted === false);
     } else if(complete) {
-      todoItems = _.filter(todos, todo => todo.isCompleted === true);
+      return _.filter(todos, todo => todo.isCompleted === true);
     } else if(!complete && !active) {
-      todoItems = todos
+      return todos;
     } else {
-      todoItems = todos;
+      return todos;
     }
+  }
+
+  renderTodos = () => {
+    let todoItems = this.playActions();
   	return(_.map(todoItems, (todo, index) => (
   		<DisplayToDos
 				key={index}

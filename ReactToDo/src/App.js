@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
-import Main from './components/Main';
+import NavBar from './components/NavBar';
+import ToDo from './containers/ToDo';
 
 export default () => {
   return (
     <div>
-      <Main />
+      <NavBar />
+      <div className="row">
+        <ToDo />
+      </div>
     </div>
-  );
+  )
 }
