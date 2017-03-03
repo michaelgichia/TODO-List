@@ -1,7 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
 
-export default () => {
+export default function NavBar() {
   return (
     <header>
       <nav>

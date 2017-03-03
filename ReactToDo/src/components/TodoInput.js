@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class TodoInput extends Component {
 	render() {
@@ -15,4 +15,11 @@ export default class TodoInput extends Component {
 			</div>
 		)
 	}
+}
+
+TodoInput.propTypes = {
+	onSubmit: PropTypes.func.isRequired,
+	onChange: PropTypes.func.isRequired,
+	value: PropTypes.any,
+	refs: PropTypes.any
 }

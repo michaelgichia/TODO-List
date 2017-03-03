@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default (props) => {
+export default function Task(props) {
 	return (
 		<div className="task">
 		  <label className="waves-effect waves-light" id="all-todo" onClick={props.displayAllTodos}>All</label>
@@ -10,3 +10,12 @@ export default (props) => {
 		</div>
 	);
 }
+
+Task.propTypes = {
+	displayAllTodos: PropTypes.func.isRequired,
+	toggleAll: PropTypes.func.isRequired,
+	displayActiveTodos: PropTypes.func.isRequired,
+	displayCompletedTodos: PropTypes.func.isRequired
+}
+
+

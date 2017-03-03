@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import _ from 'lodash';
+import React, {Component, PropTypes} from 'react';
 
 export default class DisplayToDos extends Component {
 	constructor(props){
@@ -54,7 +53,7 @@ export default class DisplayToDos extends Component {
         <label htmlFor={this.props.id}>{this.props.content}</label>
         <div className="actions">
           <label className="edit transparent" onClick={this.editTodo}>
-            <i className="tiny material-icons">mode_edit</i>
+             <i className="tiny material-icons">mode_edit</i>
           </label>
           <label className="delete transparent" onClick={this.props.onDelete}>&times;</label>
         </div>
@@ -63,3 +62,12 @@ export default class DisplayToDos extends Component {
   }
 }
  
+DisplayToDos.propTypes = {
+  updateTodos: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  content: PropTypes.string,
+  todos: PropTypes.array,
+  updateCheckbox: PropTypes.func.isRequired,
+  keys: PropTypes.number,
+  id: PropTypes.number
+}
