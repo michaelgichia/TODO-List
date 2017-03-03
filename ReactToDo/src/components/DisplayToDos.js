@@ -7,16 +7,13 @@ export default class DisplayToDos extends Component {
     this.state = {
     	isEditing: false
     }
-    this.editTodo = this.editTodo.bind(this)
-    this.formSubmit = this.formSubmit.bind(this)
-    this.toggle = this.toggle.bind(this)
   }
 
-  editTodo() {
+  editTodo = () => {
   	this.setState({isEditing: true})
   }
 
-  formSubmit(event) {
+  formSubmit = (event) => {
   	event.preventDefault()
   	const newContent = this.refs.newValue.value
   	const oldContent = this.props.content
@@ -24,7 +21,7 @@ export default class DisplayToDos extends Component {
   	this.setState({isEditing: false})
   }
 
-  toggle() {
+  toggle = () => {
     const index = this.refs.checkbox.id;
     const oldCheckboxVal = this.props.todos[index];
     this.props.updateCheckbox(oldCheckboxVal)

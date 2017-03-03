@@ -17,32 +17,18 @@ export default class ToDo extends Component {
       active: false,
       complete: false
     }
-    this.createTodo = this.createTodo.bind(this)
-    this.handelSubmit = this.handelSubmit.bind(this)
-    this.onInputChange = this.onInputChange.bind(this)
-    this.renderTodos = this.renderTodos.bind(this)
-    this.deleteTodo = this.deleteTodo.bind(this)
-    this.updateTodos = this.updateTodos.bind(this)
-    this.toggleAll = this.toggleAll.bind(this)
-    this.activeTodos = this.activeTodos.bind(this)
-    this.completedTodos = this.completedTodos.bind(this)
-    this.newTodos = this.newTodos.bind(this)
-    this.updateCheckbox = this.updateCheckbox.bind(this)
-    this.displayActiveTodos = this.displayActiveTodos.bind(this)
-    this.displayCompletedTodos = this.displayCompletedTodos.bind(this)
-    this.displayAllTodos = this.displayAllTodos.bind(this)
   }
 
-  onInputChange(event) {
+  onInputChange = (event) => {
     this.setState({term: event.target.value})
   }
 
-  createTodo(value) {
+  createTodo = (value) => {
     let todos = _.concat(this.state.todos, { content: value, isCompleted: false})
     this.setState({todos})
   }
 
-  handelSubmit(event) {
+  handelSubmit = (event) => {
     event.preventDefault();
     if(this.refs.inputValue.props.value.length < 5) {return}
     const value = this.refs.inputValue.props.value
@@ -50,35 +36,35 @@ export default class ToDo extends Component {
     this.setState({term: ""})
   }
 
-  deleteTodo(done) {
+  deleteTodo = (done) => {
     const {todos} = this.state
   	_.remove(todos, todo => todo === done )
     this.setState({todos})
   }
 
-  updateTodos(newContent, oldContent) {
+  updateTodos = (newContent, oldContent) => {
   	const {todos} = this.state
   	const oldTodoObj = _.find(todos, todo => todo.content === oldContent)
   	oldTodoObj.content = newContent
   	this.setState({todos})
   }
 
-  updateCheckbox(oldCheckboxVal) {
+  updateCheckbox = (oldCheckboxVal) => {
     const {todos} = this.state
     const newValue = _.find(todos, todo => todo.content === oldCheckboxVal.content)
     newValue.isCompleted = !newValue.isCompleted;
     this.setState({todos});
   }
 
-  activeTodos(todos) {
+  activeTodos = (todos) => {
     return todos.filter(todo => !todo.isCompleted);
   }
 
-  completedTodos(todos) {
+  completedTodos = (todos) => {
     return todos.filter(todo => !!todo.isCompleted);
   }
 
-  newTodos(todos, activeTodos, completedTodos) {
+  newTodos = (todos, activeTodos, completedTodos) => {
     if(completedTodos.length > 0) {
       return todos.map(todo => Object.assign({}, todo, {isCompleted: false}))
     } else if(activeTodos.length > 0) {
@@ -88,7 +74,7 @@ export default class ToDo extends Component {
     }
   }
 
-  toggleAll() {
+  toggleAll = () => {
     const {todos} = this.state;
     let activeTodos = this.activeTodos(todos);
     let completedTodos = this.completedTodos(todos);
@@ -96,19 +82,21 @@ export default class ToDo extends Component {
     this.setState({todos: newTodos})
   }
 
-  displayActiveTodos() {
-    this.setState({active: true, complete: false})
+  displayActiveTodos = () => {
+    this.setState(
+      {active: true, complete: false}
+    )
   }
 
-  displayCompletedTodos() {
+  displayCompletedTodos = () => {
     this.setState({active: false, complete: true})
   }
 
-  displayAllTodos() {
+  displayAllTodos = () => {
     this.setState({active: false, complete: false})
   }
 
-  renderTodos() {
+  renderTodos = () => {
     const {todos, active, complete} = this.state;
     let todoItems;
     if(active) {
