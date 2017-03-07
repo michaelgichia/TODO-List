@@ -12,16 +12,11 @@ export default class TodoInput extends Component {
     this.setState({term: event.target.value})
   }
 
-  createTodo = (value) => {
-    let todos = _.concat(this.state.todos, { content: value, isCompleted: false})
-    this.setState({todos})
-  }
-
   handelSubmit = (event) => {
     event.preventDefault();
-    if(this.refs.inputValue.props.value.length < 5) {return}
-    const value = this.refs.inputValue.props.value
-    this.createTodo(value)
+    if(this.refs.inputValue.value.length < 5) {return}
+    const value = this.refs.inputValue.value
+    this.props.createTodo(value)
     this.setState({term: ""})
   }
 

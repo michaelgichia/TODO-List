@@ -18,6 +18,11 @@ export default class ToDo extends Component {
     }
   }
 
+  createTodo = (value) => {
+    let todos = _.concat(this.state.todos, { content: value, isCompleted: false})
+    this.setState({todos})
+  }
+
   deleteTodo = (done) => {
     const {todos} = this.state
   	_.remove(todos, todo => todo === done )
@@ -93,7 +98,9 @@ export default class ToDo extends Component {
           <p>To~Do</p>
         </div>
         <div className="col l6 m8 s12 offset-l3 offset-m2">
-          <TodoInput />
+          <TodoInput 
+            createTodo={this.createTodo}
+          />
           <Task
             {...this.state}
             updateState={this.updateState} 
