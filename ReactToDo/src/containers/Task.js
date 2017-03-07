@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import _ from 'lodash';
 import Label from '../components/Label';
 
@@ -42,4 +42,13 @@ export default class Task extends Component {
 
 	}
 }
+
+Task.propTypes = {
+  todos: PropTypes.array,
+  displayAllTodos: PropTypes.func,
+  toggleAll: PropTypes.func,
+  displayActiveTodos: PropTypes.func,
+  displayCompletedTodos: PropTypes.func,
+  updateState: PropTypes.func
+};
 

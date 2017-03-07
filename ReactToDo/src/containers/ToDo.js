@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import _ from 'lodash';
 import TodoInput from './TodoInput';
 import DisplayToDos from './DisplayToDos';
@@ -118,7 +118,3 @@ export default class ToDo extends Component {
     )
   }
 }
-
-ToDo.propTypes = {
-  value: PropTypes.number,
-};

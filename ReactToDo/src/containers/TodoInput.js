@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import _ from 'lodash';
+import React, {Component, PropTypes} from 'react';
 
 export default class TodoInput extends Component {
 	constructor(props) {
@@ -34,5 +33,9 @@ export default class TodoInput extends Component {
 			</div>
 		)
 	}
+}
+
+TodoInput.propTypes = {
+	createTodo: PropTypes.func
 }
 
