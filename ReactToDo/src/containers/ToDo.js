@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
-import TodoInput from '../components/TodoInput';
+import TodoInput from './TodoInput';
 import DisplayToDos from './DisplayToDos';
-import Task from '../components/Task';
+import Task from './Task';
 
 export default class ToDo extends Component {
 	constructor(props){
@@ -13,27 +13,9 @@ export default class ToDo extends Component {
         {content: "Learn Redux Saga in Depth", isCompleted: false},
         {content: "Learn Redux Redux-Form in Depth", isCompleted: false}
       ],
-      term: '',
       active: false,
       complete: false
     }
-  }
-
-  onInputChange = (event) => {
-    this.setState({term: event.target.value})
-  }
-
-  createTodo = (value) => {
-    let todos = _.concat(this.state.todos, { content: value, isCompleted: false})
-    this.setState({todos})
-  }
-
-  handelSubmit = (event) => {
-    event.preventDefault();
-    if(this.refs.inputValue.props.value.length < 5) {return}
-    const value = this.refs.inputValue.props.value
-    this.createTodo(value)
-    this.setState({term: ""})
   }
 
   deleteTodo = (done) => {
@@ -56,30 +38,8 @@ export default class ToDo extends Component {
     this.setState({todos});
   }
 
-  activeTodos = (todos) => {
-    return todos.filter(todo => !todo.isCompleted);
-  }
-
-  completedTodos = (todos) => {
-    return todos.filter(todo => !!todo.isCompleted);
-  }
-
-  newTodos = (todos, activeTodos, completedTodos) => {
-    if(completedTodos.length > 0) {
-      return todos.map(todo => Object.assign({}, todo, {isCompleted: false}))
-    } else if(activeTodos.length > 0) {
-      return todos.map(todo => Object.assign({}, todo, {isCompleted: true}))
-    } else {
-      return todos.map(todo => Object.assign({}, todo, {isCompleted: !todo.isCompleted}))
-    }
-  }
-
-  toggleAll = () => {
-    const {todos} = this.state;
-    let activeTodos = this.activeTodos(todos);
-    let completedTodos = this.completedTodos(todos);
-    const newTodos = this.newTodos(todos, activeTodos, completedTodos)
-    this.setState({todos: newTodos})
+  updateState = (prevstate) => {
+    this.setState({todos: prevstate})
   }
 
   displayActiveTodos = () => {
@@ -133,23 +93,18 @@ export default class ToDo extends Component {
           <p>To~Do</p>
         </div>
         <div className="col l6 m8 s12 offset-l3 offset-m2">
-          <TodoInput
-            createTodo={this.createTodo}
-            onSubmit={this.handelSubmit}
-            ref="inputValue"
-            onChange={this.onInputChange}
-            value={this.state.term}/>
+          <TodoInput />
           <Task
             {...this.state}
-            toggleAll={this.toggleAll}
+            updateState={this.updateState} 
             displayActiveTodos={this.displayActiveTodos}
             displayCompletedTodos={this.displayCompletedTodos}
             displayAllTodos={this.displayAllTodos}
-          /> 
+          />
         </div>
           <div className="col l6 m8 s12 offset-l3 offset-m2">
             <ul>
-            	{this.renderTodos()}
+              {this.renderTodos()}
             </ul>
           </div>
       </div>
