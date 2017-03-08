@@ -52,10 +52,16 @@ export default class DisplayToDos extends Component {
         />
         <label htmlFor={this.props.id}>{this.props.content}</label>
         <div className="actions">
-          <label className="edit transparent" onClick={this.editTodo}>
-             <i className="tiny material-icons">mode_edit</i>
+          <label
+            className="edit transparent"
+            onClick={this.editTodo}>
+            <i className="tiny material-icons">mode_edit</i>
           </label>
-          <label className="delete transparent" onClick={this.props.onDelete}>&times;</label>
+          <label
+          className="delete transparent"
+          onClick={this.props.onDelete}>
+            &times;
+          </label>
         </div>
       </li>
     )
@@ -63,11 +69,11 @@ export default class DisplayToDos extends Component {
 }
  
 DisplayToDos.propTypes = {
-  updateTodos: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  updateTodos: PropTypes.func,
+  onDelete: PropTypes.func,
   content: PropTypes.string,
   todos: PropTypes.array,
-  updateCheckbox: PropTypes.func.isRequired,
+  updateCheckbox: PropTypes.func,
   keys: PropTypes.number,
   id: PropTypes.number
 }

@@ -13,7 +13,7 @@ const Label = (props) => {
 export default Label;
 
 Label.propTypes = {
-  id: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  children: PropTypes.string,
   onClick: PropTypes.func
 };
