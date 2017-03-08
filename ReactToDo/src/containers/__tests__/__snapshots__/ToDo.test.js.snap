@@ -1,0 +1,596 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDo components renders correctly 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div>
+    <div
+        className="title col l6 m8 s12 offset-l3 offset-m2"
+    >
+        <p>
+            To~Do
+        </p>
+    </div>
+    <div
+        className="col l6 m8 s12 offset-l3 offset-m2"
+    >
+        <TodoInput
+            createTodo={[Function]}
+        />
+        <Task
+            active={false}
+            complete={false}
+            displayActiveTodos={[Function]}
+            displayAllTodos={[Function]}
+            displayCompletedTodos={[Function]}
+            todos={
+                Array [
+                    Object {
+                      "content": "Learn Redux in Depth",
+                      "isCompleted": true,
+                    },
+                    Object {
+                      "content": "Learn Redux Saga in Depth",
+                      "isCompleted": false,
+                    },
+                    Object {
+                      "content": "Learn Redux Redux-Form in Depth",
+                      "isCompleted": false,
+                    },
+                  ]
+            }
+            updateState={[Function]}
+        />
+    </div>
+    <div
+        className="col l6 m8 s12 offset-l3 offset-m2"
+    >
+        <ul>
+            <DisplayToDos
+                HtmlFor={0}
+                active={false}
+                complete={false}
+                content="Learn Redux in Depth"
+                id={0}
+                isCompleted={true}
+                onDelete={[Function]}
+                todos={
+                    Array [
+                        Object {
+                          "content": "Learn Redux in Depth",
+                          "isCompleted": true,
+                        },
+                        Object {
+                          "content": "Learn Redux Saga in Depth",
+                          "isCompleted": false,
+                        },
+                        Object {
+                          "content": "Learn Redux Redux-Form in Depth",
+                          "isCompleted": false,
+                        },
+                      ]
+                }
+                updateCheckbox={[Function]}
+                updateTodos={[Function]}
+            />
+            <DisplayToDos
+                HtmlFor={1}
+                active={false}
+                complete={false}
+                content="Learn Redux Saga in Depth"
+                id={1}
+                isCompleted={false}
+                onDelete={[Function]}
+                todos={
+                    Array [
+                        Object {
+                          "content": "Learn Redux in Depth",
+                          "isCompleted": true,
+                        },
+                        Object {
+                          "content": "Learn Redux Saga in Depth",
+                          "isCompleted": false,
+                        },
+                        Object {
+                          "content": "Learn Redux Redux-Form in Depth",
+                          "isCompleted": false,
+                        },
+                      ]
+                }
+                updateCheckbox={[Function]}
+                updateTodos={[Function]}
+            />
+            <DisplayToDos
+                HtmlFor={2}
+                active={false}
+                complete={false}
+                content="Learn Redux Redux-Form in Depth"
+                id={2}
+                isCompleted={false}
+                onDelete={[Function]}
+                todos={
+                    Array [
+                        Object {
+                          "content": "Learn Redux in Depth",
+                          "isCompleted": true,
+                        },
+                        Object {
+                          "content": "Learn Redux Saga in Depth",
+                          "isCompleted": false,
+                        },
+                        Object {
+                          "content": "Learn Redux Redux-Form in Depth",
+                          "isCompleted": false,
+                        },
+                      ]
+                }
+                updateCheckbox={[Function]}
+                updateTodos={[Function]}
+            />
+        </ul>
+    </div>
+</div>,
+  "nodes": Array [
+    <div>
+      <div
+            className="title col l6 m8 s12 offset-l3 offset-m2"
+      >
+            <p>
+                  To~Do
+            </p>
+      </div>
+      <div
+            className="col l6 m8 s12 offset-l3 offset-m2"
+      >
+            <TodoInput
+                  createTodo={[Function]}
+            />
+            <Task
+                  active={false}
+                  complete={false}
+                  displayActiveTodos={[Function]}
+                  displayAllTodos={[Function]}
+                  displayCompletedTodos={[Function]}
+                  todos={
+                        Array [
+                              Object {
+                                "content": "Learn Redux in Depth",
+                                "isCompleted": true,
+                              },
+                              Object {
+                                "content": "Learn Redux Saga in Depth",
+                                "isCompleted": false,
+                              },
+                              Object {
+                                "content": "Learn Redux Redux-Form in Depth",
+                                "isCompleted": false,
+                              },
+                            ]
+                  }
+                  updateState={[Function]}
+            />
+      </div>
+      <div
+            className="col l6 m8 s12 offset-l3 offset-m2"
+      >
+            <ul>
+                  <DisplayToDos
+                        HtmlFor={0}
+                        active={false}
+                        complete={false}
+                        content="Learn Redux in Depth"
+                        id={0}
+                        isCompleted={true}
+                        onDelete={[Function]}
+                        todos={
+                              Array [
+                                    Object {
+                                      "content": "Learn Redux in Depth",
+                                      "isCompleted": true,
+                                    },
+                                    Object {
+                                      "content": "Learn Redux Saga in Depth",
+                                      "isCompleted": false,
+                                    },
+                                    Object {
+                                      "content": "Learn Redux Redux-Form in Depth",
+                                      "isCompleted": false,
+                                    },
+                                  ]
+                        }
+                        updateCheckbox={[Function]}
+                        updateTodos={[Function]}
+                  />
+                  <DisplayToDos
+                        HtmlFor={1}
+                        active={false}
+                        complete={false}
+                        content="Learn Redux Saga in Depth"
+                        id={1}
+                        isCompleted={false}
+                        onDelete={[Function]}
+                        todos={
+                              Array [
+                                    Object {
+                                      "content": "Learn Redux in Depth",
+                                      "isCompleted": true,
+                                    },
+                                    Object {
+                                      "content": "Learn Redux Saga in Depth",
+                                      "isCompleted": false,
+                                    },
+                                    Object {
+                                      "content": "Learn Redux Redux-Form in Depth",
+                                      "isCompleted": false,
+                                    },
+                                  ]
+                        }
+                        updateCheckbox={[Function]}
+                        updateTodos={[Function]}
+                  />
+                  <DisplayToDos
+                        HtmlFor={2}
+                        active={false}
+                        complete={false}
+                        content="Learn Redux Redux-Form in Depth"
+                        id={2}
+                        isCompleted={false}
+                        onDelete={[Function]}
+                        todos={
+                              Array [
+                                    Object {
+                                      "content": "Learn Redux in Depth",
+                                      "isCompleted": true,
+                                    },
+                                    Object {
+                                      "content": "Learn Redux Saga in Depth",
+                                      "isCompleted": false,
+                                    },
+                                    Object {
+                                      "content": "Learn Redux Redux-Form in Depth",
+                                      "isCompleted": false,
+                                    },
+                                  ]
+                        }
+                        updateCheckbox={[Function]}
+                        updateTodos={[Function]}
+                  />
+            </ul>
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <ToDo />,
+      "_debugID": 47,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": ToDo {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "createTodo": [Function],
+        "deleteTodo": [Function],
+        "displayActiveTodos": [Function],
+        "displayAllTodos": [Function],
+        "displayCompletedTodos": [Function],
+        "playActions": [Function],
+        "props": Object {},
+        "refs": Object {},
+        "renderTodos": [Function],
+        "state": Object {
+          "active": false,
+          "complete": false,
+          "todos": Array [
+            Object {
+              "content": "Learn Redux in Depth",
+              "isCompleted": true,
+            },
+            Object {
+              "content": "Learn Redux Saga in Depth",
+              "isCompleted": false,
+            },
+            Object {
+              "content": "Learn Redux Redux-Form in Depth",
+              "isCompleted": false,
+            },
+          ],
+        },
+        "updateCheckbox": [Function],
+        "updateState": [Function],
+        "updateTodos": [Function],
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 13,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div>
+          <div
+                    className="title col l6 m8 s12 offset-l3 offset-m2"
+          >
+                    <p>
+                              To~Do
+                    </p>
+          </div>
+          <div
+                    className="col l6 m8 s12 offset-l3 offset-m2"
+          >
+                    <TodoInput
+                              createTodo={[Function]}
+                    />
+                    <Task
+                              active={false}
+                              complete={false}
+                              displayActiveTodos={[Function]}
+                              displayAllTodos={[Function]}
+                              displayCompletedTodos={[Function]}
+                              todos={
+                                        Array [
+                                                  Object {
+                                                    "content": "Learn Redux in Depth",
+                                                    "isCompleted": true,
+                                                  },
+                                                  Object {
+                                                    "content": "Learn Redux Saga in Depth",
+                                                    "isCompleted": false,
+                                                  },
+                                                  Object {
+                                                    "content": "Learn Redux Redux-Form in Depth",
+                                                    "isCompleted": false,
+                                                  },
+                                                ]
+                              }
+                              updateState={[Function]}
+                    />
+          </div>
+          <div
+                    className="col l6 m8 s12 offset-l3 offset-m2"
+          >
+                    <ul>
+                              <DisplayToDos
+                                        HtmlFor={0}
+                                        active={false}
+                                        complete={false}
+                                        content="Learn Redux in Depth"
+                                        id={0}
+                                        isCompleted={true}
+                                        onDelete={[Function]}
+                                        todos={
+                                                  Array [
+                                                            Object {
+                                                              "content": "Learn Redux in Depth",
+                                                              "isCompleted": true,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Saga in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Redux-Form in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                          ]
+                                        }
+                                        updateCheckbox={[Function]}
+                                        updateTodos={[Function]}
+                              />
+                              <DisplayToDos
+                                        HtmlFor={1}
+                                        active={false}
+                                        complete={false}
+                                        content="Learn Redux Saga in Depth"
+                                        id={1}
+                                        isCompleted={false}
+                                        onDelete={[Function]}
+                                        todos={
+                                                  Array [
+                                                            Object {
+                                                              "content": "Learn Redux in Depth",
+                                                              "isCompleted": true,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Saga in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Redux-Form in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                          ]
+                                        }
+                                        updateCheckbox={[Function]}
+                                        updateTodos={[Function]}
+                              />
+                              <DisplayToDos
+                                        HtmlFor={2}
+                                        active={false}
+                                        complete={false}
+                                        content="Learn Redux Redux-Form in Depth"
+                                        id={2}
+                                        isCompleted={false}
+                                        onDelete={[Function]}
+                                        todos={
+                                                  Array [
+                                                            Object {
+                                                              "content": "Learn Redux in Depth",
+                                                              "isCompleted": true,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Saga in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Redux-Form in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                          ]
+                                        }
+                                        updateCheckbox={[Function]}
+                                        updateTodos={[Function]}
+                              />
+                    </ul>
+          </div>
+</div>,
+        "_debugID": 48,
+        "_renderedOutput": <div>
+          <div
+                    className="title col l6 m8 s12 offset-l3 offset-m2"
+          >
+                    <p>
+                              To~Do
+                    </p>
+          </div>
+          <div
+                    className="col l6 m8 s12 offset-l3 offset-m2"
+          >
+                    <TodoInput
+                              createTodo={[Function]}
+                    />
+                    <Task
+                              active={false}
+                              complete={false}
+                              displayActiveTodos={[Function]}
+                              displayAllTodos={[Function]}
+                              displayCompletedTodos={[Function]}
+                              todos={
+                                        Array [
+                                                  Object {
+                                                    "content": "Learn Redux in Depth",
+                                                    "isCompleted": true,
+                                                  },
+                                                  Object {
+                                                    "content": "Learn Redux Saga in Depth",
+                                                    "isCompleted": false,
+                                                  },
+                                                  Object {
+                                                    "content": "Learn Redux Redux-Form in Depth",
+                                                    "isCompleted": false,
+                                                  },
+                                                ]
+                              }
+                              updateState={[Function]}
+                    />
+          </div>
+          <div
+                    className="col l6 m8 s12 offset-l3 offset-m2"
+          >
+                    <ul>
+                              <DisplayToDos
+                                        HtmlFor={0}
+                                        active={false}
+                                        complete={false}
+                                        content="Learn Redux in Depth"
+                                        id={0}
+                                        isCompleted={true}
+                                        onDelete={[Function]}
+                                        todos={
+                                                  Array [
+                                                            Object {
+                                                              "content": "Learn Redux in Depth",
+                                                              "isCompleted": true,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Saga in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Redux-Form in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                          ]
+                                        }
+                                        updateCheckbox={[Function]}
+                                        updateTodos={[Function]}
+                              />
+                              <DisplayToDos
+                                        HtmlFor={1}
+                                        active={false}
+                                        complete={false}
+                                        content="Learn Redux Saga in Depth"
+                                        id={1}
+                                        isCompleted={false}
+                                        onDelete={[Function]}
+                                        todos={
+                                                  Array [
+                                                            Object {
+                                                              "content": "Learn Redux in Depth",
+                                                              "isCompleted": true,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Saga in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Redux-Form in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                          ]
+                                        }
+                                        updateCheckbox={[Function]}
+                                        updateTodos={[Function]}
+                              />
+                              <DisplayToDos
+                                        HtmlFor={2}
+                                        active={false}
+                                        complete={false}
+                                        content="Learn Redux Redux-Form in Depth"
+                                        id={2}
+                                        isCompleted={false}
+                                        onDelete={[Function]}
+                                        todos={
+                                                  Array [
+                                                            Object {
+                                                              "content": "Learn Redux in Depth",
+                                                              "isCompleted": true,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Saga in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                            Object {
+                                                              "content": "Learn Redux Redux-Form in Depth",
+                                                              "isCompleted": false,
+                                                            },
+                                                          ]
+                                        }
+                                        updateCheckbox={[Function]}
+                                        updateTodos={[Function]}
+                              />
+                    </ul>
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <ToDo />,
+}
+`;
