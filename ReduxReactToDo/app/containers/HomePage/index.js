@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import NavBar from 'components/NavBar';
+import Box from 'components/Box';
 import TodoInputText from 'components/TodoInputText';
+import TodoDisplay from 'components/TodoDisplay';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -10,16 +11,15 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
       	<header>
 					<NavBar />
       	</header>
-				<Grid fluid>
-				  <Row>
-				    <Col lgOffset={4} lg={8} xs={10} md={8}>
-							<TodoInputText />
-				    </Col>
-				  </Row>
-				</Grid>
+        <Box>
+          <TodoInputText />
+          <TodoDisplay />
+        </Box>
       </div>
     );
   }
 }
+
+
 
 

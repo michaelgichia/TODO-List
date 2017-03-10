@@ -8,7 +8,7 @@ class TodoInputText extends React.Component { // eslint-disable-line react/prefe
     return (
       <div>
 				<TextField
-				  hintText="Full width"
+				  hintText="Add a to-do"
 				  fullWidth={true}
 				/>
       </div>
