@@ -19,7 +19,7 @@ function Box(props) {
 }
 
 Box.propTypes = {
-
+	children: React.PropTypes.any,
 };
 
 export default Box;

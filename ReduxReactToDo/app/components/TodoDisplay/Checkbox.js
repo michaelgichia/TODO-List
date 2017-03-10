@@ -6,5 +6,4 @@ const Checkbox = styled.input`
 	  text-decoration:line-through;
 	  font-style:italic;
 `;
-
 export default Checkbox;

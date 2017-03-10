@@ -17,17 +17,19 @@ export default function createRoutes(store) {
   const { injectReducer, injectSagas } = getAsyncInjectors(store); // eslint-disable-line no-unused-vars
 
   return [
-    {
+     {
       path: '/',
-      name: 'home',
+      name: 'toDo',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          import('containers/ToDo/reducer'),
+          import('containers/ToDo'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
+        importModules.then(([reducer, component]) => {
+          injectReducer('toDo', reducer.default);
           renderRoute(component);
         });
 
