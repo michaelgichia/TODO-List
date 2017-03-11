@@ -1,15 +1,7 @@
-/*
- *
- * ToDo actions
- *
- */
-
 import {
-  DEFAULT_ACTION,
+  ADD_TODO,
+  TOGGLE_TODO
 } from './constants';
 
-export function defaultAction() {
-  return {
-    type: DEFAULT_ACTION,
-  };
-}
+export const addTodo = input => ({type: ADD_TODO, payload: input})
+export const completeTodo = id => ({type: TOGGLE_TODO, id})

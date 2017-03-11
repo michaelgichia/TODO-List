@@ -11,7 +11,7 @@ import Wrapper from './Wrapper';
 function Box(props) {
   return (
   	<Wrapper>
-			<Col xs={12} sm={12} md={6} lg={6}>
+			<Col xs={12} sm={10} md={6} lg={6}>
 				{props.children}
 			</Col>
   	</Wrapper>

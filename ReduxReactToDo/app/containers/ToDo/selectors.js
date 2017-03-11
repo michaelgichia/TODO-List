@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 /**
  * Direct selector to the toDo state domain
  */
-const selectToDoDomain = () => (state) => state.get('toDo');
+const selectToDoDomain = () => (state) => state.get("toDo");
 
 /**
  * Other specific selectors
@@ -16,10 +16,10 @@ const selectToDoDomain = () => (state) => state.get('toDo');
 
 const makeSelectToDo = () => createSelector(
   selectToDoDomain(),
-  (substate) => substate.toJS()
+  (substate) => substate
 );
 
-export default makeSelectToDo;
 export {
   selectToDoDomain,
 };
+export default makeSelectToDo;
