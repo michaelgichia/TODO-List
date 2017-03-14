@@ -8,7 +8,8 @@ const Li = styled.li`
   -webkit-box-shadow:0 1px 1px 0 #d2d0d0;
   box-shadow: 0 0px 0px 0 #d2d0d0, 0 0px 1px 0 #d2d0d0;
   background:rgba(255,255,255,0.5);
-  position: relative
+  position: relative;
+  display: flex
 `;
 
 export default Li;

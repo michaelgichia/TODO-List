@@ -2,7 +2,7 @@ import styled from 'styled-components';
 const Label = styled.label`
   -ms-word-break:break-all;
   word-break:break-all;
-  margin-left: 5px;
+  margin: 0 10px;
   word-break:break-word;
   -webkit-hyphens:auto;
   -moz-hyphens:auto;
@@ -10,7 +10,7 @@ const Label = styled.label`
   border: none;
   outline: none;
   cursor: pointer;
-  color:  #2d2d2d;
+  color:  #505050;
   transition: .2s ease-out ;
   -webkit-appearance: none;
   -moz-appearance: none;

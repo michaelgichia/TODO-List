@@ -13,11 +13,9 @@ const selectToDoDomain = () => (state) => state.get("toDo");
 /**
  * Default selector used by ToDo
  */
-
-const makeSelectToDo = () => createSelector(
-  selectToDoDomain(),
-  (substate) => substate
-);
+function makeSelectToDo() {
+	return createSelector(selectToDoDomain(),(substate) => substate);
+}
 
 export {
   selectToDoDomain,

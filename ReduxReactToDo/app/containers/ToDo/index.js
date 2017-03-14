@@ -8,24 +8,34 @@ import NavBar from 'components/NavBar';
 import Box from 'components/Box';
 import TodoInputText from 'components/TodoInputText';
 import TodoDisplay from 'components/TodoDisplay';
+import Ul from './Ul';
 
 export class ToDo extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props)
+  }
 
   handleAddTodo(input) {
     return this.props.actions.addToDo(input)
   }
+
   render() {
+    const todos = this.props.ToDo;
     return (
       <div>
         <header>
           <NavBar />
         </header>
         <Box>
-          <TodoInputText {...this.props.actions}/>
-          <TodoDisplay {...this.props.ToDo} {...this.props.actions}/>
+          <TodoInputText {...this.props.actions} />
+          <Ul>
+            {todos.map((todo, index) => (
+              <TodoDisplay todo={todo} key={index} {...this.props.actions}/>
+            ))}
+          </Ul>
         </Box>
       </div>
-    );
+    )
   }
 }
 

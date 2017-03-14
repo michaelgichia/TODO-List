@@ -27,5 +27,17 @@ injectGlobal`
   label {
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
+    font-size: medium !important;
   }
+	[type="checkbox"],
+	[type="radio"] {
+	  min-width: 20px !important;
+	}
+  .edit-input {
+    width: 100%
+  }
+  form {
+    width: 100%;
+  }
+
 `;
