@@ -25,13 +25,14 @@ class TodoInputText extends React.Component { // eslint-disable-line react/prefe
 
   render() {
     return (
-      <div>
+      <div className="text-field">
         <form onSubmit={(e) => this.handelSubmit(e, this.state.value)}>
           <TextField
             hintText="Add a to-do"
             fullWidth={true}
             value={this.state.value}
             onChange={this.handleInput}
+            hintStyle={{fontStyle: "italic", color: "#00bcd4"}}
           />
         </form>
       </div>

@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <div>
 			<AppBar
-				title="Title"
+				title="ToDo"
 				iconClassNameRight="muidocs-icon-navigation-expand-more"
 			/>
     </div>

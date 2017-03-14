@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
 import Li from './Li';
 import Label from './Label';
 import Checkbox from './Checkbox';
@@ -26,7 +27,7 @@ class TodoDisplay extends React.Component { // eslint-disable-line react/prefer-
 
 	handelEditTodo(e, id) {
 		e.preventDefault()
-		const value = this.refs.editInput.value
+		const value = this.refs.editInput.getValue()
 		if(value.length > 3) {
 			this.props.editTodo(id, value)
 			this.setState({ isEditing: false })
@@ -39,11 +40,14 @@ class TodoDisplay extends React.Component { // eslint-disable-line react/prefer-
 			return (
 				<Li>
 					<form onSubmit={(e) => this.handelEditTodo(e, todo.id)}>
-						<input
+						<TextField
 							className="edit-input"
 							type='text'
+							fullWidth={true}
 							defaultValue={todo.content}
 							ref="editInput"
+							id="editInput"
+							floatingLabelText="editing..."
 						/>
 					</form>
 				</Li>
@@ -56,7 +60,7 @@ class TodoDisplay extends React.Component { // eslint-disable-line react/prefer-
 					onChange={() => this.props.completeTodo(todo.id)}
 					defaultChecked={todo.isCompleted ? "checked":""}
 					type="checkbox"/>
-				<Label>
+				<Label className="label-styles">
 					{todo.content}
 				</Label>
 				<Navigators onEdit={this.editing} onDelete={() => this.props.deleteTodo(todo.id)}/>

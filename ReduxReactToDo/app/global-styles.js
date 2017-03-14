@@ -7,6 +7,9 @@ injectGlobal`
     height: 100%;
     width: 100%;
     margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: #ffffff !important;
   }
 
   body {
@@ -29,9 +32,11 @@ injectGlobal`
     line-height: 1.5em;
     font-size: medium !important;
   }
+
 	[type="checkbox"],
 	[type="radio"] {
 	  min-width: 20px !important;
+    margin: 0 5px;
 	}
   .edit-input {
     width: 100%
@@ -40,4 +45,37 @@ injectGlobal`
     width: 100%;
   }
 
+  ul {
+    padding-left: 0px !important;
+    -webkit-padding-start: 0px !important;
+    list-style-type: none !important;
+  }
+
+  .text-field {
+    margin: 10px !important;
+  }
+
+  .wrapper-label label {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .wrapper-label label:first-of-type {
+    margin: 20%;
+  }
+
+  wrapper-label label:last-of-type {
+    margin: 40%;
+  }
+
+  svg {
+    fill: #d2d0d0;
+  }
+
+  svg:hover,
+  svg:active {
+    fill: #00bcd4;
+    transition: .2s ease-out ;
+    transition: .2s ease-in ;
+  }
 `;

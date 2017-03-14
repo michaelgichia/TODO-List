@@ -8,6 +8,7 @@ import NavBar from 'components/NavBar';
 import Box from 'components/Box';
 import TodoInputText from 'components/TodoInputText';
 import TodoDisplay from 'components/TodoDisplay';
+import Filters from 'components/Filters';
 import Ul from './Ul';
 
 export class ToDo extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -28,6 +29,7 @@ export class ToDo extends React.Component { // eslint-disable-line react/prefer-
         </header>
         <Box>
           <TodoInputText {...this.props.actions} />
+          <Filters />
           <Ul>
             {todos.map((todo, index) => (
               <TodoDisplay todo={todo} key={index} {...this.props.actions}/>
