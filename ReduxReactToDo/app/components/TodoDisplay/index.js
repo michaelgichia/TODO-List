@@ -27,12 +27,15 @@ class TodoDisplay extends React.Component { // eslint-disable-line react/prefer-
 	handelEditTodo(e, id) {
 		e.preventDefault()
 		const value = this.refs.editInput.value
-		this.props.editTodo(id, value)
-		this.setState({ isEditing: false })
+		if(value.length > 3) {
+			this.props.editTodo(id, value)
+			this.setState({ isEditing: false })
+		}
 	}
 	
   render() {
   	const {todo} = this.props;
+  	console.log("mike", this.props)
 		if(this.state.isEditing) {
 			return (
 				<Li>
@@ -57,7 +60,7 @@ class TodoDisplay extends React.Component { // eslint-disable-line react/prefer-
 				<Label>
 					{todo.content}
 				</Label>
-				<Navigators onEdit={this.editing}/>
+				<Navigators onEdit={this.editing} onDelete={() => this.props.deleteTodo(todo.id)}/>
 			</Li>
 		);
   }

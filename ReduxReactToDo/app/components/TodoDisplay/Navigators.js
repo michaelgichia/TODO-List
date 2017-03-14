@@ -7,7 +7,7 @@ const Navigators = (props) => {
 	return (
 		<Wrapper>
 			<Label onClick={props.onEdit}>edit</Label>
-			<Label>delete</Label>
+			<Label onClick={props.onDelete}>delete</Label>
 		</Wrapper>
 	)
 }

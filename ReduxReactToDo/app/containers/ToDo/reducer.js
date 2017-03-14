@@ -3,7 +3,8 @@ import _ from 'lodash';
 import {
   ADD_TODO,
   TOGGLE_TODO,
-  EDIT_TODO
+  EDIT_TODO,
+  DELETE_TODO
 } from './constants';
 
 
@@ -36,6 +37,10 @@ function toDoReducer(state = initialState, action) {
       return state.map(todo => todo.id === action.id ?
         {...todo, content: action.input} : todo
       )
+
+    case DELETE_TODO:
+      console.log("id", action)
+      return state.filter(todo => todo.id !== action.id)
 
     default:
       return state;
