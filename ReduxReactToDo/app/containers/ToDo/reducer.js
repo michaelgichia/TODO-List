@@ -39,7 +39,6 @@ function toDoReducer(state = initialState, action) {
       )
 
     case DELETE_TODO:
-      console.log("id", action)
       return state.filter(todo => todo.id !== action.id)
 
     default:

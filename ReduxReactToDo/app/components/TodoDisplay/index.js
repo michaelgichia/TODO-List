@@ -35,7 +35,6 @@ class TodoDisplay extends React.Component { // eslint-disable-line react/prefer-
 	
   render() {
   	const {todo} = this.props;
-  	console.log("mike", this.props)
 		if(this.state.isEditing) {
 			return (
 				<Li>
