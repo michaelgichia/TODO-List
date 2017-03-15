@@ -3,13 +3,17 @@ import Tasks from './Tasks';
 import Label from './Label';
 
 class Filters extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <Tasks>
-		    <Label>All</Label>
-		    <Label>Toggle</Label>
-		    <Label>Active</Label>
-		    <Label>Completed</Label>
+        <Label id="all-todo">All</Label>
+        <Label id="toggle-all">Toggle</Label>
+        <Label id="active-todo">Active</Label>
+        <Label id="complete-todo">Completed</Label>
       </Tasks>
     );
   }

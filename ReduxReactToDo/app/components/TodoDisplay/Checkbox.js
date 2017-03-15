@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 const Checkbox = styled.input`
- &:checked+label {
+ &:checked + label {
 	  color:#757575 !important;
-	  background:none;
-	  text-decoration:line-through;
-	  font-style:italic;
+	  text-decoration: line-through !important;
+	  font-style:italic !important;
 `;
 export default Checkbox;

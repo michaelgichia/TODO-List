@@ -4,7 +4,9 @@ import {
   ADD_TODO,
   TOGGLE_TODO,
   EDIT_TODO,
-  DELETE_TODO
+  DELETE_TODO,
+  ACTIVE_TODO,
+  COMPLETED_TODO
 } from './constants';
 
 
@@ -40,6 +42,14 @@ function toDoReducer(state = initialState, action) {
 
     case DELETE_TODO:
       return state.filter(todo => todo.id !== action.id)
+
+    case ACTIVE_TODO:
+      const activeCopy = [...state]
+      return activeCopy.filter(todo => todo.isCompleted === false)
+
+    case COMPLETED_TODO:
+      const completedCopy = [...state]
+      return completedCopy.filter(todo => todo.isCompleted === true)
 
     default:
       return state;

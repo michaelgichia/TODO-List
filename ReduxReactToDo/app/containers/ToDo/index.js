@@ -29,7 +29,7 @@ export class ToDo extends React.Component { // eslint-disable-line react/prefer-
         </header>
         <Box>
           <TodoInputText {...this.props.actions} />
-          <Filters />
+          <Filters {...this.props.actions}/>
           <Ul>
             {todos.map((todo, index) => (
               <TodoDisplay todo={todo} key={index} {...this.props.actions}/>

@@ -38,9 +38,17 @@ injectGlobal`
 	  min-width: 20px !important;
     margin: 0 5px;
 	}
+
+  [type="checkbox"]:checked + label {
+    color:#757575 !important;
+    text-decoration: line-through !important;
+    font-style:italic !important;
+  }
+
   .edit-input {
     width: 100%
   }
+  
   form {
     width: 100%;
   }
