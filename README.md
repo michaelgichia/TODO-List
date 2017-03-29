@@ -15,12 +15,14 @@ A good example is **Vanilla Todo-list**.
 ### Installation:
 
 ```bash
+> git clone https://github.com/michaelgichia/TODO-List.git
+> cd VanillaJs
 > npm install
 > npm start
 ```
 
 # Other projects on this repository are:
-#
+
 #### **1. ReduxReactTodo**
 
 <img src="./screenshots/ReduxReactToDo.png" width="500" height="300" alt="React Todo-list">
@@ -38,12 +40,14 @@ A good example is **Vanilla Todo-list**.
 ### Installation:
 
 ```bash
+> git clone https://github.com/michaelgichia/TODO-List.git
+> cd ReactToDo
 > yarn
 > yarn start
 ```
 
 #### **2. ReactTodo**
-* Try it on codepen [Codepen](http://cdpn.io/v/VpaEGo).
+* Try it on codepen [Codepen](http://codepen.io/mikegichia/pen/VpaEGo){:target="_blank"} .
 
 <img src="./screenshots/ReactTodo1.png" width="500" height="300" alt="React Todo-list">
 
@@ -58,6 +62,8 @@ A good example is **Vanilla Todo-list**.
 ### Installation:
 
 ```bash
+> git clone https://github.com/michaelgichia/TODO-List.git
+> cd ReduxReactToDo
 > yarn
 > yarn start
 ```
