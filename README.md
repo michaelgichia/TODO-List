@@ -24,7 +24,7 @@ A good example is **Vanilla Todo-list**.
 #### **ReactTodo**
 * Try it on codepen[Codepen](http://cdpn.io/v/VpaEGo)
 
-<img src="./screenshots/ReactTodo.png" width="500" height="300" alt="React Todo-list">
+<img src="./screenshots/ReactTodo1.png" width="500" height="300" alt="React Todo-list">
 
 ### Framework and libaries used:
 * Reactjs
