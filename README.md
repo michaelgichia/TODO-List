@@ -19,29 +19,9 @@ A good example is **Vanilla Todo-list**.
 > npm start
 ```
 
-### Other projects on this repository are:
+# Other projects on this repository are:
 #
-#### **1. ReactTodo**
-* Try it on codepen [Codepen](http://cdpn.io/v/VpaEGo).
-
-<img src="./screenshots/ReactTodo1.png" width="500" height="300" alt="React Todo-list">
-
-### Framework and libaries used:
-* Reactjs
-* Es6
-* Materializecss
-* Create-react-app by facebook
-* Styled-components
-* Browser-sync
-
-### Installation:
-
-```bash
-> yarn
-> yarn start
-```
-
-#### **2. ReduxReactTodo**
+#### **1. ReduxReactTodo**
 
 <img src="./screenshots/ReduxReactToDo.png" width="500" height="300" alt="React Todo-list">
 
@@ -54,6 +34,26 @@ A good example is **Vanilla Todo-list**.
 * Material-Ui
 * Browser-sync
 * react-styled-flexboxgrid
+
+### Installation:
+
+```bash
+> yarn
+> yarn start
+```
+
+#### **2. ReactTodo**
+* Try it on codepen [Codepen](http://cdpn.io/v/VpaEGo).
+
+<img src="./screenshots/ReactTodo1.png" width="500" height="300" alt="React Todo-list">
+
+### Framework and libaries used:
+* Reactjs
+* Es6
+* Materializecss
+* Create-react-app by facebook
+* Styled-components
+* Browser-sync
 
 ### Installation:
 
