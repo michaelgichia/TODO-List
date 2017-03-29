@@ -20,9 +20,9 @@ A good example is **Vanilla Todo-list**.
 ```
 
 ### Other projects on this repository are:
-
-#### **ReactTodo**
-* Try it on codepen[Codepen](http://cdpn.io/v/VpaEGo)
+#
+#### **1. ReactTodo**
+* Try it on codepen [Codepen](http://cdpn.io/v/VpaEGo).
 
 <img src="./screenshots/ReactTodo1.png" width="500" height="300" alt="React Todo-list">
 
@@ -41,7 +41,7 @@ A good example is **Vanilla Todo-list**.
 > yarn start
 ```
 
-#### **ReduxReactTodo**
+#### **2. ReduxReactTodo**
 
 <img src="./screenshots/ReduxReactToDo.png" width="500" height="300" alt="React Todo-list">
 
@@ -62,6 +62,6 @@ A good example is **Vanilla Todo-list**.
 > yarn start
 ```
 
-* MERNTodo coming soon...
+**3. MERNTodo coming soon...**
 
 
